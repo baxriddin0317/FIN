@@ -1,7 +1,5 @@
 import React from 'react'
-import { Header } from '../compnents/Header'
-import { WelcomeBanner } from '../compnents/WelcomeBanner'
-import DashboardCard01 from '../compnents/DashboardCard01'
+import { DashboardCard01, DashboardInfo, DashboardMap, Header, WelcomeBanner } from '../compnents'
 
 const Plans = () => {
   return (
@@ -13,11 +11,17 @@ const Plans = () => {
       <WelcomeBanner title={"california public employess retirement system"} />
 
       {/* Cards */}
-      <div className="max-w-7xl mx-auto px-5 grid grid-cols-3 gap-6">
+      <div className="max-w-7xl mx-auto w-full px-2 md:px-5 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Line chart (Acme Plus) */}
         {[...Array(3)].map((item,idx) => (
           <DashboardCard01 key={idx} />
         ))}
+      </div>
+
+      {/* map and info */}
+      <div className='max-w-7xl mx-auto w-full px-2 md:px-5 grid md:grid-cols-3 items-stretch gap-4 my-8'>
+          <DashboardInfo />
+          <DashboardMap />
       </div>
     </>
   )

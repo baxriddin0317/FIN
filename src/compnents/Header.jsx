@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Logo from '../../public/imags/logo.png'
+import Logo from '/assets/images/logo.png'
 
 export function Header() {
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import LineChart01 from '../charts/LineChart01';
-import Icon from '/public/imags/logo.png';
+import Icon from '/public/assets/images/icon-01.svg';
 import EditMenu from './DropdownEditMenu';
 
 // Import utilities
 import { tailwindConfig, hexToRGB } from '../utils/Utils';
 
-function DashboardCard01() {
+export function DashboardCard01() {
 
   const chartData = {
     labels: [
@@ -74,7 +74,7 @@ function DashboardCard01() {
 
   return (
     <div className="flex flex-col bg-white  shadow-lg rounded-sm border border-slate-200">
-      <div className="px-5 pt-5">
+      <div className="px-5 pt-5 pb-5 sm:pb-0">
         <header className="flex justify-between items-start mb-2">
           {/* Icon */}
           <img src={Icon} width="32" height="32" alt="Icon 01" />
@@ -105,12 +105,10 @@ function DashboardCard01() {
         </div>
       </div>
       {/* Chart built with Chart.js 3 */}
-      <div className="grow max-sm:max-h-[128px] xl:max-h-[128px]">
+      <div className="grow hidden sm:block max-sm:max-h-[128px] max-h-[128px]">
         {/* Change the height attribute to adjust the chart height */}
         <LineChart01 data={chartData} width={389} height={128} />
       </div>
     </div>
   );
 }
-
-export default DashboardCard01;
