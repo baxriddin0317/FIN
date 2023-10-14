@@ -3,3 +3,5 @@ export { Header } from "./Header"
 export { DashboardInfo } from "./DashboardInfo"
 export { DashboardCard01 } from "./DashboardCard01"
 export { DashboardMap } from './DashboardMap'
+export { DashboardTable } from "./DashboardTable"
+export { CircleChart } from "./CircleCahrt"
