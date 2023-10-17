@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const SearchCard = () => {
+export const SearchSidebar = () => {
   const [companySetting, setCompanySetting] = useState(false);
   const [manager, setManager] = useState(false);
   const [attributes, setAttributes] = useState(false);

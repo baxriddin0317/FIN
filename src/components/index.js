@@ -6,4 +6,5 @@ export { DashboardMap } from './DashboardMap'
 export { DashboardTable } from "./DashboardTable"
 export { CircleChart } from "./CircleCahrt"
 export { Table } from "./Table"
-export { SearchCard } from "./SearchCard"
+export { SearchSidebar } from "./SearchSidebar"
+export { ResultTable } from "./ResultTable"

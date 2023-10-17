@@ -1,5 +1,6 @@
 import React from 'react'
-import { SearchCard } from '../components'
+import { ResultTable, SearchSidebar } from '../components'
+import { ResultData } from '../utils/data'
 
 const Plans2 = () => {
   return (
@@ -10,7 +11,8 @@ const Plans2 = () => {
 
       {/*  */}
       <div className='grid grid-cols-12 gap-5 items-stretch'>
-        <SearchCard />
+        <SearchSidebar />
+        <ResultTable data={ResultData} />
       </div>
     </div>
   )
