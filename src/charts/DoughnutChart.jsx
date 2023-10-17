@@ -38,7 +38,7 @@ function DoughnutChart({
         },
         plugins: {
           legend: {
-            display: false,
+            position: 'bottom',
           },
           tooltip: {
             titleColor: darkMode ? tooltipTitleColor.dark : tooltipTitleColor.light,
@@ -61,45 +61,13 @@ function DoughnutChart({
         {
           id: 'htmlLegend',
           afterUpdate(c, args, options) {
+            // console.log(c.options.plugins.legend.labels.generateLabels(c));
             const ul = legend.current;
             if (!ul) return;
             // Remove old legend items
             while (ul.firstChild) {
               ul.firstChild.remove();
             }
-            // Reuse the built-in legendItems generator
-            const items = c.options.plugins.legend.labels.generateLabels(c);
-            items.forEach((item) => {
-              const li = document.createElement('li');
-              li.style.margin = tailwindConfig().theme.margin[1];
-              // Button element
-              const button = document.createElement('button');
-              button.classList.add('btn-xs', 'bg-white', 'dark:bg-slate-800', 'text-slate-500', 'dark:text-slate-400', 'border', 'border-slate-200', 'dark:border-slate-700', 'shadow-md');
-              button.style.opacity = item.hidden ? '.3' : '';
-              button.onclick = () => {
-                c.toggleDataVisibility(item.index);
-                c.update();
-              };
-              // Color box
-              const box = document.createElement('span');
-              box.style.display = 'block';
-              box.style.width = tailwindConfig().theme.width[2];
-              box.style.height = tailwindConfig().theme.height[2];
-              box.style.backgroundColor = item.fillStyle;
-              box.style.borderRadius = tailwindConfig().theme.borderRadius.sm;
-              box.style.marginRight = tailwindConfig().theme.margin[1];
-              box.style.pointerEvents = 'none';
-              // Label
-              const label = document.createElement('span');
-              label.style.display = 'flex';
-              label.style.alignItems = 'center';
-              const labelText = document.createTextNode(item.text);
-              label.appendChild(labelText);
-              li.appendChild(button);
-              button.appendChild(box);
-              button.appendChild(label);
-              ul.appendChild(li);
-            });
           },
         },
       ],

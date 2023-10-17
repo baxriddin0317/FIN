@@ -5,3 +5,5 @@ export { DashboardCard01 } from "./DashboardCard01"
 export { DashboardMap } from './DashboardMap'
 export { DashboardTable } from "./DashboardTable"
 export { CircleChart } from "./CircleCahrt"
+export { Table } from "./Table"
+export { SearchCard } from "./SearchCard"
